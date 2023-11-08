@@ -22,11 +22,7 @@ def web_test():
 
 @app.route('/submit', methods=['POST']) 
 def read_form(): 
-  
-    # Get the form data as Python ImmutableDict datatype  
     data = request.form 
-  
-    ## Return the extracted information  
-    return { 
-        'answer'     : data['answer']
-    } 
+    answer = data['answer']
+
+    return "you selected: "+answer
