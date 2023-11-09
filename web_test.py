@@ -4,6 +4,8 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
 def web_test():
+    global question_number
+    question_number = 0
     return """
 <p>Which Hogwarts lesson would be your favourite:</p>
 
@@ -24,5 +26,5 @@ def web_test():
 def read_form(): 
     data = request.form 
     answer = data['answer']
-
+    question_number = question_number + 1
     return "you selected: "+answer
