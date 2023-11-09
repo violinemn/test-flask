@@ -30,22 +30,32 @@ def read_form():
     answer = data['answer']
     calculate_question_score(answer, scores)
     question_number = question_number + 1
-    return "you selected: "+answer+ "<p> \n Please click the link for next question: \n <a href=\"/\">Click here</a>  </p>"
+    return "<p><center> You answered: "+answer+ "<center><p>""<p><center> \n Please click the link for next question: \n <a href=\"/\">Click here</a>  <center></p>"
 
 def create_question(question, answers):
     text_to_ask_user = """
-    <p>{question}</p>
+    <p><center><font size="+100">\n{question}</font><center></p>
 
     <form action="submit" method="post">
-        <input type="radio" id="a" name="answer" value="a" />
-        <label for="a">{answers0}</label><br>
-        <input type="radio" id="b" name="answer" value="b" />
-        <label for="b">{answers1}</label><br>
-        <input type="radio" id="c" name="answer" value="c" />
-        <label for="c">{answers2}</label><br>
-        <input type="radio" id="d" name="answer" value="d" />
-        <label for="d">{answers3}</label><br>
-        <input type="submit" value="Submit" />
+        <table>  
+            <tr>
+                <td><input type="radio" style="vertical-align: middle" id="a" name="answer" value="a" />
+                <label for="a">{answers0}</label><br></td>
+            </tr>
+            <tr>
+                <td><input type="radio" style="vertical-align: middle" id="b" name="answer" value="b" />
+                <label for="b">{answers1}</label><br></td>
+            </tr>
+            <tr>
+                <td><input type="radio" style="vertical-align: middle" id="c" name="answer" value="c" />
+                <label for="c">{answers2}</label><br></td>
+            </tr>
+            <tr>
+                <td><input type="radio" style="vertical-align: middle" id="d" name="answer" value="d" />
+                <label for="d">{answers3}</label><br><br></td>
+            </tr>
+        </table>
+            <input type="submit" value="Submit" />
     </form>
   """.format(question=question, answers0=answers[0], answers1=answers[1], answers2=answers[2], answers3=answers[3])
     return text_to_ask_user
