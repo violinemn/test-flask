@@ -1,0 +1,26 @@
+body {
+    background-image: url("static/pattern.png");
+    background-color: #fbd8fa;
+    font-family: 'Gill Sans', sans-serif;
+    font-size: large;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  img {
+    float: right;
+    margin: 20px 50px 0 300px;
+    padding: 4px;
+  }
+
+  h1 {
+    background-color: #fbd8fa;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: large;
+  }
+ 
+  input[type=radio] {
+    -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  transform: scale(1.5);
+  }
